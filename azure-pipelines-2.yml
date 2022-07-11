@@ -27,4 +27,4 @@ steps:
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/8e613d4a55548ae2d6890d896a5c06f9e121e34e/arm.json'
     deploymentMode: 'Incremental'
-    deploymentName: 'resource group rg4'
+    deploymentName: 'rg4'
