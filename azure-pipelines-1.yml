@@ -5,7 +5,13 @@
 
 trigger:
 - master
-
+resources:
+  repositories:
+  - repository: myfirstpipeline
+    type: github
+    name: SaiBhargav-M/myfirstpipeline
+    endpoint: SaiBhargav-M
+    ref: main
 
 pool:
   vmImage: ubuntu-latest
@@ -13,6 +19,8 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- checkout: myfirstpipeline
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
