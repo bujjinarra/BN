@@ -11,7 +11,7 @@ resources:
     type: github
     name: SaiBhargav-M/myfirstpipeline
     endpoint: SaiBhargav-M
-    ref: main
+    ref: master
 
 pool:
   vmImage: ubuntu-latest
