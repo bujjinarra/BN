@@ -41,8 +41,6 @@ stages:
   dependsOn: Build
   jobs:
     - job: job3
-      dependsOn: job2
-      condition: succeeded()
       steps:        
       - task: AzureCLI@2
         inputs:
