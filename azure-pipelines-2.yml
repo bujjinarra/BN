@@ -9,7 +9,7 @@ pr: none # Disable pr.
 
 pool:
   vmImage: ubuntu-latest
-  
+
 jobs:
   - job: job1
     steps:    
@@ -43,3 +43,4 @@ jobs:
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: 'az group delete -n rg6 --yes'
+
