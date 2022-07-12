@@ -32,4 +32,4 @@ steps:
     azureSubscription: 'myfirstpipelines'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az group delete -n rg6'
+    inlineScript: 'az group delete -n rg6 --yes'
