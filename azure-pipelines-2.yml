@@ -18,14 +18,38 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: AzureResourceManagerTemplateDeployment@3
-  inputs:
-    deploymentScope: 'Subscription'
-    azureResourceManagerConnection: 'myfirstpipelines'
-    subscriptionId: '4152d77a-784e-4df1-bd82-0e04268e7073'
-    location: 'East US 2'
-    templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/master/arm.json'
-    deploymentMode: 'Incremental'
-    deploymentName: 'createallrgs'
+
+jobs:
+  - job: job1
+    steps:    
+    - task: AzureResourceManagerTemplateDeployment@3
+      inputs:
+        deploymentScope: 'Subscription'
+        azureResourceManagerConnection: 'myfirstpipelines'
+        subscriptionId: '4152d77a-784e-4df1-bd82-0e04268e7073'
+        location: 'East US 2'
+        templateLocation: 'URL of the file'
+        csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/master/arm.json'
+        deploymentMode: 'Incremental'
+        deploymentName: 'rg6'
+  - job: job2
+    dependsOn: job1
+    condition: succeeded()
+    steps:        
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'myfirstpipelines'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'sleep 120'
+  - job: job3
+    dependsOn: job2
+    condition: succeeded()
+    steps:        
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: 'myfirstpipelines'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az group delete -n rg6 --yes'
 
