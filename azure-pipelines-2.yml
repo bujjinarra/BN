@@ -25,7 +25,7 @@ steps:
     subscriptionId: '4152d77a-784e-4df1-bd82-0e04268e7073'
     location: 'East US 2'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/8e613d4a55548ae2d6890d896a5c06f9e121e34e/arm.json'
+    csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/master/arm.json'
     deploymentMode: 'Incremental'
     deploymentName: 'rg6'
 
