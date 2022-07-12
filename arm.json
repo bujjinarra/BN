@@ -12,6 +12,14 @@
             "location": "eastus2",
             "dependsOn": [],
             "tags": {}
+        },
+        {
+            "name": "rg5",
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2021-04-01",
+            "location": "eastus",
+            "dependsOn": [],
+            "tags": {}
         }
     ],
     "outputs": {}
