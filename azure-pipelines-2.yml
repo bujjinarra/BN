@@ -5,6 +5,7 @@
 # https://aka.ms/yaml
 
 trigger: none # Disable CI triggers.
+pr: none # Disable pr.
 
 pool:
   vmImage: ubuntu-latest
@@ -27,9 +28,4 @@ steps:
     csmFileLink: 'https://raw.githubusercontent.com/SaiBhargav-M/myfirstpipeline/8e613d4a55548ae2d6890d896a5c06f9e121e34e/arm.json'
     deploymentMode: 'Incremental'
     deploymentName: 'rg6'
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'myfirstpipelines'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az group delete -n rg6 --yes'
+
